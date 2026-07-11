@@ -9,6 +9,7 @@ export interface Project {
     description: string;
     longDesc?: string;
     image: string;
+    hexColor?: string;
     tech: string[];
     live: string;
     code: string;
@@ -27,6 +28,7 @@ export const projects: Project[] = [
         longDesc:
             "Movia is a full-stack transportation platform built to modernize public transit. Passengers can book rides, track buses live on a map, and receive real-time alerts — while admins manage fleets, schedules, drivers, and analytics from a unified dashboard.",
         image: "/project_movia.png",
+        hexColor: "#a855f7",
         tech: ["React", "Spring Boot", "PostgreSQL", "JWT", "Leaflet", "WebSocket", "Docker"],
         live: "#",
         code: "#",
@@ -43,6 +45,7 @@ export const projects: Project[] = [
         longDesc:
             "Aura empowers users to trigger emergency alerts with a single shake gesture. It instantly notifies trusted contacts with a live location link and connects to local emergency services — all without requiring the user to unlock their phone.",
         image: "/project_aura.png",
+        hexColor: "#3b82f6",
         tech: ["React Native", "React", "Node.js", "Express", "MongoDB"],
         live: "#",
         code: "#",
@@ -59,6 +62,7 @@ export const projects: Project[] = [
         longDesc:
             "Terimbere digitizes the full lifecycle of a cooperative — from member onboarding and savings tracking to loan management, contribution records, and automated financial reports — replacing manual paper-based processes with a secure web platform.",
         image: "/project_terimbere.png",
+        hexColor: "#06b6d4",
         tech: ["Spring Boot", "React", "PostgreSQL", "REST API"],
         live: "#",
         code: "#",
@@ -75,6 +79,7 @@ export const projects: Project[] = [
         longDesc:
             "NoiFix is an experimental IoT project that harvests ambient noise energy via piezoelectric transducers, converts it to usable electrical charge, and visualizes the output in real-time through a web dashboard with live charts and analytics.",
         image: "/project_noifix.png",
+        hexColor: "#22c55e",
         tech: ["Arduino", "React", "Node.js", "Python", "MongoDB", "IoT"],
         live: "#",
         code: "#",
@@ -89,6 +94,7 @@ export const projects: Project[] = [
         description:
             "A smart IoT solution for monitoring water quality and usage with live dashboards, analytics, and automated reporting for sustainable resource management.",
         image: "/project_isokosense.png",
+        hexColor: "#14b8a6",
         tech: ["React", "Spring Boot", "PostgreSQL", "IoT"],
         live: "#",
         code: "#",
@@ -102,6 +108,7 @@ export const projects: Project[] = [
         description:
             "A full-stack recipe discovery and sharing platform where users can explore recipes, upload their own dishes, and engage with a community of food lovers.",
         image: "/project_foodly.png",
+        hexColor: "#f59e0b",
         tech: ["React", "Node.js", "Express", "MongoDB"],
         live: "#",
         code: "#",
@@ -115,6 +122,7 @@ export const projects: Project[] = [
         description:
             "A modern music streaming application featuring playlists, artist discovery, responsive design, and an engaging user experience.",
         image: "/project_musica.png",
+        hexColor: "#ec4899",
         tech: ["React", "Node.js", "Express", "MongoDB"],
         live: "#",
         code: "#",
