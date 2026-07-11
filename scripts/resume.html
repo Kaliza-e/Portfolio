@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kaliza Esther — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    @page { size: A4; margin: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.45;
+      color: #1e293b;
+      background: #fff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      display: grid;
+      grid-template-columns: 68mm 1fr;
+    }
+    .sidebar {
+      background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%);
+      color: #e2e8f0;
+      padding: 14mm 10mm;
+    }
+    .main { padding: 14mm 12mm 12mm 10mm; }
+
+    .name {
+      font-size: 20pt;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .title {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #a5b4fc;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .sidebar-section { margin-bottom: 14px; }
+    .sidebar h2 {
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #818cf8;
+      border-bottom: 1px solid rgba(129, 140, 248, 0.35);
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+    }
+    .contact-item {
+      font-size: 8.5pt;
+      margin-bottom: 5px;
+      color: #cbd5e1;
+      word-break: break-word;
+    }
+    .contact-item strong { color: #fff; font-weight: 600; display: block; font-size: 7pt; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1px; }
+
+    .skill-group { margin-bottom: 8px; }
+    .skill-group h3 { font-size: 8.5pt; font-weight: 600; color: #fff; margin-bottom: 3px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 3px; }
+    .tag {
+      font-size: 7pt;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(129, 140, 248, 0.15);
+      border: 1px solid rgba(129, 140, 248, 0.25);
+      color: #c7d2fe;
+    }
+
+    .edu-item, .cert-item { margin-bottom: 8px; }
+    .edu-item h3, .cert-item h3 { font-size: 8.5pt; font-weight: 600; color: #fff; }
+    .edu-item p, .cert-item p { font-size: 7.8pt; color: #94a3b8; margin-top: 1px; }
+    .date { font-size: 7.5pt; color: #64748b; }
+
+    .main h2 {
+      font-size: 9pt;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #4f46e5;
+      margin-bottom: 8px;
+      padding-bottom: 3px;
+      border-bottom: 2px solid #e0e7ff;
+    }
+    .section { margin-bottom: 12px; }
+
+    .summary {
+      font-size: 9.5pt;
+      color: #334155;
+      line-height: 1.55;
+    }
+
+    .project { margin-bottom: 9px; page-break-inside: avoid; }
+    .project-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+    .project-head h3 { font-size: 10pt; font-weight: 700; color: #0f172a; }
+    .project-head .date { color: #64748b; font-size: 8pt; white-space: nowrap; }
+    .role { font-size: 8pt; font-weight: 600; color: #6366f1; margin-bottom: 3px; }
+    .project p { font-size: 8.8pt; color: #475569; margin-bottom: 4px; }
+    .tech { display: flex; flex-wrap: wrap; gap: 3px; }
+    .tech span {
+      font-size: 7pt;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 3px;
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    .highlights { list-style: none; }
+    .highlights li {
+      font-size: 8.5pt;
+      color: #475569;
+      padding-left: 10px;
+      position: relative;
+      margin-bottom: 3px;
+    }
+    .highlights li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #6366f1;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="name">Kaliza Esther</div>
+      <div class="title">Full Stack Developer · Mobile Developer · UI Designer</div>
+
+      <div class="sidebar-section">
+        <h2>Contact</h2>
+        <div class="contact-item"><strong>Email</strong>kalizaesther5@gmail.com</div>
+        <div class="contact-item"><strong>Phone</strong>+250 728 045 049</div>
+        <div class="contact-item"><strong>Location</strong>Kigali, Rwanda</div>
+        <div class="contact-item"><strong>LinkedIn</strong>linkedin.com/in/kaliza-esther-794108415</div>
+        <div class="contact-item"><strong>GitHub</strong>github.com/Kaliza-e</div>
+        <div class="contact-item"><strong>Portfolio</strong>github.com/Kaliza-e</div>
+      </div>
+
+      <div class="sidebar-section">
+        <h2>Technical Skills</h2>
+        <div class="skill-group">
+          <h3>Frontend Development</h3>
+          <div class="tags">
+            <span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">TailwindCSS</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Backend Development</h3>
+          <div class="tags">
+            <span class="tag">NodeJS</span><span class="tag">NestJS</span><span class="tag">Laravel</span><span class="tag">Python</span><span class="tag">C++</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Mobile Development</h3>
+          <div class="tags">
+            <span class="tag">React Native</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Databases & Design</h3>
+          <div class="tags">
+            <span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">PostgreSQL</span><span class="tag">Figma</span><span class="tag">Canva</span><span class="tag">Adobe XD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h2>Education</h2>
+        <div class="edu-item">
+          <h3>Advanced Level — Software Development</h3>
+          <p>Rwanda Coding Academy</p>
+          <p class="date">2024 — 2027 · Currently Enrolled</p>
+        </div>
+        <div class="edu-item">
+          <h3>Ordinary Level Education</h3>
+          <p>Lycee Notre Dame de citeaux</p>
+          <p class="date">2021 — 2023</p>
+        </div>
+        <div class="edu-item">
+          <h3>Primary School</h3>
+          <p>Espoir Primary School</p>
+          <p class="date">2014 — 2021</p>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h2>Certifications</h2>
+        <div class="cert-item"><h3>Full Stack Web Development</h3><p>Udemy · 2024</p></div>
+        <div class="cert-item"><h3>React Native Mastery</h3><p>Udemy · 2024</p></div>
+        <div class="cert-item"><h3>UI/UX Design Bootcamp</h3><p>Coursera · 2023</p></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="section">
+        <h2>Professional Summary</h2>
+        <p class="summary">
+          A Full Stack Web Developer and UI Designer who believes that great products are not just built — they are designed to feel alive. I build scalable digital products, from React Native mobile apps to responsive web platforms.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Core Strengths</h2>
+        <ul class="highlights">
+          <li>Clean system architecture and scalable design</li>
+          <li>Human-centered UI/UX and mobile-first experiences</li>
+          <li>Performance optimization and full-stack development</li>
+          <li>Smart sensing systems and IoT integrations</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Selected Projects</h2>
+
+        <div class="project">
+          <div class="project-head"><h3>SecureShake</h3><span class="date">2025</span></div>
+          <div class="role">Mobile Developer</div>
+          <p>Emergency alert mobile app with real-time safety network and backend APIs.</p>
+          <div class="tech"><span>React Native</span><span>APIs</span></div>
+        </div>
+
+        <div class="project">
+          <div class="project-head"><h3>Terimbere</h3><span class="date">2024</span></div>
+          <div class="role">Full Stack Engineer</div>
+          <p>Cooperative digital ecosystem with scalable backend systems and clean UI/UX.</p>
+          <div class="tech"><span>Web</span><span>Mobile</span><span>UI/UX</span></div>
+        </div>
+
+        <div class="project">
+          <div class="project-head"><h3>IsokoSense</h3><span class="date">2024</span></div>
+          <div class="role">System Builder</div>
+          <p>Smart water monitoring system using IoT sensors, analytics, and alert system.</p>
+          <div class="tech"><span>IoT</span><span>Analytics</span><span>Alerts</span></div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

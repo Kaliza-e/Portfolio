@@ -21,11 +21,10 @@ export const educationEntries: EducationEntry[] = [
         statusLabel: "Currently Enrolled",
         date: "2024 — 2027",
         description:
-            "Pursuing an intensive software engineering education focused on full-stack web development, mobile application development, artificial intelligence, embedded systems, cybersecurity, networking, and cloud technologies. Actively participating in hackathons, innovation challenges, and real-world software projects.",
+            "Pursuing an intensive software engineering education focused on full-stack web development, mobile application development, UI/UX design, embedded systems, cybersecurity, networking, and cloud technologies. Actively participating in hackathons, innovation challenges, and real-world software projects.",
         highlights: [
             "Full Stack Development",
-            "Artificial Intelligence",
-            "Cybersecurity",
+            "Mobile Development",
         ],
         image: "/education_rca.png",
         logo: "/logo_rca.png",
