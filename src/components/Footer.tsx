@@ -15,7 +15,7 @@ const Footer = () => {
     useEffect(() => {
         setMounted(true);
     }, []);
-    
+
     useEffect(() => {
         const checkMobile = () => {
             setIsMobile(!window.matchMedia("(pointer: fine)").matches);
@@ -63,13 +63,13 @@ const Footer = () => {
     const socials = siteConfig.socials;
 
     const isDark = mounted ? resolvedTheme === "dark" : true;
-    
-    // Smoke colors
-    const colors = isDark 
-        ? ["#a855f7", "#06b6d4", "#3b82f6", "#ec4899"] 
-        : ["#ec4899", "#22d3ee", "#818cf8", "#f472b6"]; 
 
-    const baseColor = isDark ? "#1e293b" : "#94a3b8"; 
+    // Smoke colors
+    const colors = isDark
+        ? ["#a855f7", "#06b6d4", "#3b82f6", "#ec4899"]
+        : ["#ec4899", "#22d3ee", "#818cf8", "#f472b6"];
+
+    const baseColor = isDark ? "#1e293b" : "#94a3b8";
 
     // Combine cursor and drifting for final smoke positions
     const smokePos1X = useTransform([smoothX, driftX1], ([x, dx]: any[]) => (x as number) + (dx as number));
@@ -89,7 +89,7 @@ const Footer = () => {
     );
 
     return (
-        <footer 
+        <footer
             ref={containerRef}
             className="w-full py-6 px-6 lg:px-24 border-t border-slate-100 dark:border-white/5 relative overflow-hidden transition-colors duration-500"
             onMouseMove={handleMouseMove}
@@ -115,7 +115,7 @@ const Footer = () => {
 
                 {/* MOVING SMOKE Massive Typography */}
                 <div className="relative py-2 flex justify-center items-center overflow-visible">
-                    <motion.h2 
+                    <motion.h2
                         className={`
                             text-[clamp(1.5rem,14vw,16rem)] 
                             font-black 
@@ -131,7 +131,7 @@ const Footer = () => {
                             duration-1000
                         `}
                         style={{
-                            backgroundImage: isMobile 
+                            backgroundImage: isMobile
                                 ? `linear-gradient(${baseColor}, ${baseColor})`
                                 : background,
                             backgroundSize: "100% 100%",
@@ -151,7 +151,7 @@ const Footer = () => {
                     <div className="flex items-center space-x-4">
                         <span className="w-12 h-[1px] bg-slate-200 dark:bg-slate-800" />
                         <p className="font-bold flex items-center group">
-                            Built with 
+                            Built with
                             <span className="mx-2 text-neonPurple dark:text-neonPurple group-hover:scale-125 transition-transform duration-300">✦</span>
                             Kaliza Esther
                         </p>
@@ -159,7 +159,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <motion.div 
+            <motion.div
                 className="absolute inset-0 pointer-events-none transition-opacity duration-1000"
                 style={{
                     opacity: isHovered ? 0.08 : 0,

@@ -39,9 +39,8 @@ function TimelineDot({
             <motion.div
                 animate={active && !reduceMotion ? { scale: [1, 1.2, 1] } : { scale: 1 }}
                 transition={active && !reduceMotion ? { repeat: Infinity, duration: 2.2, ease: "easeInOut" } : { duration: 0.3 }}
-                className={`relative z-10 w-3.5 h-3.5 md:w-4 md:h-4 rounded-full border-2 border-white dark:border-[#010409] transition-colors duration-400 ${
-                    filled || active ? styles.dot : "bg-transparent border-slate-300 dark:border-white/25"
-                }`}
+                className={`relative z-10 w-3.5 h-3.5 md:w-4 md:h-4 rounded-full border-2 border-white dark:border-[#010409] transition-colors duration-400 ${filled || active ? styles.dot : "bg-transparent border-slate-300 dark:border-white/25"
+                    }`}
             />
         </div>
     );
@@ -86,11 +85,10 @@ function EducationEntry({
                 className="flex-1 min-w-0 w-full"
             >
                 <div
-                    className={`relative overflow-hidden rounded-2xl border bg-white dark:bg-white/[0.02] px-6 py-5 sm:px-8 sm:py-6 md:px-10 md:py-7 lg:px-12 lg:py-8 min-h-[88px] md:min-h-[104px] transition-all duration-400 ${
-                        inView
-                            ? `${styles.border} shadow-[0_20px_60px_-24px_rgba(168,85,247,0.35)]`
-                            : "border-slate-200/90 dark:border-white/10 shadow-sm"
-                    }`}
+                    className={`relative overflow-hidden rounded-2xl border bg-white dark:bg-white/[0.02] px-6 py-5 sm:px-8 sm:py-6 md:px-10 md:py-7 lg:px-12 lg:py-8 min-h-[88px] md:min-h-[104px] transition-all duration-400 ${inView
+                        ? `${styles.border} shadow-[0_20px_60px_-24px_rgba(168,85,247,0.35)]`
+                        : "border-slate-200/90 dark:border-white/10 shadow-sm"
+                        }`}
                 >
                     <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7 lg:gap-10">
                         <motion.div

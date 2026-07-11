@@ -46,7 +46,7 @@ export default function ScrollControls() {
                 className="fixed bottom-8 right-8 z-[90] p-4 rounded-full bg-black/40 backdrop-blur-xl border border-white/10 text-white shadow-2xl hover:border-neonPurple transition-colors group"
             >
                 <ArrowUp size={20} className="group-hover:-translate-y-1 transition-transform" />
-                
+
                 {/* Glow Effect */}
                 <div className="absolute inset-0 rounded-full bg-neonPurple/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
             </motion.button>

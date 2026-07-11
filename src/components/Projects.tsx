@@ -25,24 +25,49 @@ function ProjectCard({ project, index }: {
     const y = useTransform(scrollYProgress, [0, 1], ["0%", "5%"]);
 
     return (
-        <div ref={containerRef} className="h-screen w-full sticky top-0 flex items-center justify-center p-3 md:p-6 lg:p-8 overflow-hidden perspective-1000">
+        <div ref={containerRef} className="h-screen w-full sticky top-0 flex items-center justify-center p-3 md:p-6 lg:p-8 overflow-hidden">
             <motion.div
                 style={{ scale, opacity, y, transformOrigin: 'top center' }}
-                className="relative w-full h-full max-h-[1100px] flex flex-col lg:flex-row overflow-hidden rounded-xl md:rounded-2xl bg-white dark:bg-[#0a0a0c] border border-black/10 dark:border-white/10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] dark:shadow-2xl will-change-transform"
+                className="relative w-full h-full max-h-[1100px] flex flex-col lg:flex-row overflow-hidden rounded-xl md:rounded-2xl bg-white dark:bg-[#0a0a0c] border border-black/10 dark:border-white/10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] dark:shadow-[0_10px_60px_-10px_rgba(168,85,247,0.15)] will-change-transform"
             >
-                {/* Image Section (Left) */}
-                <div className="relative w-full lg:w-[55%] h-[40%] lg:h-full bg-slate-100 dark:bg-black overflow-hidden shrink-0 group border-b lg:border-b-0 lg:border-r border-black/10 dark:border-white/10">
-                    <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                        priority={index < 2}
-                    />
+                {/* Image Section (Left) — dark framed panel, full image always visible */}
+                <div className="relative w-full lg:w-[58%] h-[45%] lg:h-full shrink-0 overflow-hidden group">
+                    {/* Dark gradient background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-[#0d0d1a] to-slate-950" />
+                    {/* Colored glow overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-neonPurple/10 via-transparent to-neonBlue/10 z-[1]" />
+
+                    {/* Image inside a padded, rounded frame */}
+                    <div className="absolute inset-0 z-[2] flex items-center justify-center p-6 md:p-8 lg:p-10">
+                        <div className="relative w-full h-full rounded-xl overflow-hidden shadow-[0_20px_60px_-10px_rgba(0,0,0,0.6)] border border-white/10 group-hover:border-neonPurple/40 transition-colors duration-500">
+                            <Image
+                                src={project.image}
+                                alt={project.title}
+                                fill
+                                className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                                priority={index < 2}
+                                sizes="(max-width: 1024px) 100vw, 58vw"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Mobile bottom fade */}
+                    <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#0a0a0c]/70 to-transparent z-[3] pointer-events-none lg:hidden" />
+
+                    {/* Preview badge */}
+                    <div className="absolute top-4 left-4 z-[4] flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-[9px] font-black uppercase tracking-[0.25em] text-white/70">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                        Preview
+                    </div>
+
+                    {/* Index badge */}
+                    <div className="absolute top-4 right-4 z-[4] w-9 h-9 rounded-full bg-black/50 backdrop-blur-md border border-white/10 flex items-center justify-center text-xs font-black text-white/50">
+                        {String(index + 1).padStart(2, '0')}
+                    </div>
                 </div>
 
                 {/* Content Section (Right) */}
-                <div className="w-full lg:w-[45%] h-[60%] lg:h-full p-6 md:p-10 lg:p-14 xl:p-20 flex flex-col justify-center relative bg-white dark:bg-[#0a0a0c] z-10 shrink-0 border-t lg:border-t-0 lg:border-l border-black/5 dark:border-white/5">
+                <div className="w-full lg:w-[42%] h-[55%] lg:h-full p-6 md:p-10 lg:p-12 xl:p-16 flex flex-col justify-center relative bg-white dark:bg-[#0a0a0c] z-10 shrink-0">
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -85,7 +110,7 @@ function ProjectCard({ project, index }: {
                     </motion.div>
 
                     {/* Faint Background Number */}
-                    <div className="absolute bottom-4 right-4 lg:bottom-12 lg:right-12 text-slate-900/[0.03] dark:text-white/[0.03] text-[8rem] lg:text-[15rem] font-black leading-none pointer-events-none select-none z-0">
+                    <div className="absolute bottom-4 right-4 lg:bottom-8 lg:right-8 text-slate-900/[0.03] dark:text-white/[0.03] text-[6rem] lg:text-[10rem] font-black leading-none pointer-events-none select-none z-0">
                         {String(index + 1).padStart(2, '0')}
                     </div>
                 </div>

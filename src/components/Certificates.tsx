@@ -312,11 +312,10 @@ export default function Certificates() {
                                         return (
                                             <div
                                                 key={cert.id}
-                                                className={`h-screen flex items-center shrink-0 relative ${
-                                                    index > 0
+                                                className={`h-screen flex items-center shrink-0 relative ${index > 0
                                                         ? "border-t border-slate-300/80 dark:border-[#2a2a2a]"
                                                         : ""
-                                                }`}
+                                                    }`}
                                             >
                                                 <button
                                                     type="button"
@@ -324,18 +323,16 @@ export default function Certificates() {
                                                     className="w-full text-left flex items-center gap-6 xl:gap-10 outline-none focus-visible:ring-2 focus-visible:ring-neonPurple/50 rounded-lg py-4"
                                                 >
                                                     <span
-                                                        className={`shrink-0 text-sm font-mono tabular-nums transition-colors duration-300 ${
-                                                            isActive ? "text-neonPurple" : "text-slate-400 dark:text-white/25"
-                                                        }`}
+                                                        className={`shrink-0 text-sm font-mono tabular-nums transition-colors duration-300 ${isActive ? "text-neonPurple" : "text-slate-400 dark:text-white/25"
+                                                            }`}
                                                     >
                                                         {formatCounter(cert.id)}
                                                     </span>
                                                     <h3
-                                                        className={`text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[1.05] tracking-tight transition-all duration-300 ${
-                                                            isActive
+                                                        className={`text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[1.05] tracking-tight transition-all duration-300 ${isActive
                                                                 ? "text-slate-900 dark:text-white font-black"
                                                                 : "text-slate-400 dark:text-white/30 font-normal"
-                                                        }`}
+                                                            }`}
                                                     >
                                                         {cert.title}
                                                     </h3>

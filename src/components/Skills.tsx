@@ -2,66 +2,76 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { 
-    Brain, Code2, TrendingUp, Layout, Box, Cloud, Database, Lock 
+import {
+    Brain, Code2, TrendingUp, Layout, Box, Cloud, Database, Lock
 } from "lucide-react";
 
 const skills = [
-    { 
-        id: 0, label: "AI Applied", desc: "Neural Networks & Machine Learning", 
-        icon: Brain, color: "#a855f7", shadow: "rgba(168, 85, 247, 0.35)",
-        tags: ["TensorFlow", "PyTorch", "NLP"],
-        level: 88,
-        accent: "#a855f7"
-    },
-    { 
-        id: 1, label: "Software Dev", desc: "Full Stack Engineering", 
-        icon: Code2, color: "#06b6d4", shadow: "rgba(6, 182, 212, 0.35)",
-        tags: ["React", "Node.js", "TypeScript"],
+    {
+        id: 0,
+        label: "Full Stack Development",
+        desc: "Modern Web Applications & Enterprise Systems",
+        icon: Code2,
+        color: "#06b6d4",
+        shadow: "rgba(6, 182, 212, 0.35)",
+        tags: ["React", "Next.js", "Node.js", "Express"],
         level: 92,
         accent: "#06b6d4"
     },
-    { 
-        id: 2, label: "Digital Strategy", desc: "Product Vision & Growth", 
-        icon: TrendingUp, color: "#3b82f6", shadow: "rgba(59, 130, 246, 0.35)",
-        tags: ["Analytics", "SEO", "KPIs"],
-        level: 80,
-        accent: "#3b82f6"
+    {
+        id: 1,
+        label: "Backend Engineering",
+        desc: "APIs, Databases & Server Architecture",
+        icon: Database,
+        color: "#8b5cf6",
+        shadow: "rgba(139, 92, 246, 0.35)",
+        tags: ["Spring Boot", "NestJS", "MongoDB", "PostgreSQL"],
+        level: 88,
+        accent: "#8b5cf6"
     },
-    { 
-        id: 3, label: "UI/UX Design", desc: "User Experience & Interfaces", 
-        icon: Layout, color: "#ec4899", shadow: "rgba(236, 72, 153, 0.35)",
-        tags: ["Figma", "Prototyping", "Research"],
-        level: 90,
+    {
+        id: 2,
+        label: "Mobile Development",
+        desc: "Cross-platform Mobile Applications",
+        icon: Layout,
+        color: "#ec4899",
+        shadow: "rgba(236, 72, 153, 0.35)",
+        tags: ["React Native", "Mobile UI", "APIs"],
+        level: 85,
         accent: "#ec4899"
     },
-    { 
-        id: 4, label: "3D & WebGL", desc: "Immersive Environments", 
-        icon: Box, color: "#f59e0b", shadow: "rgba(245, 158, 11, 0.35)",
-        tags: ["Three.js", "Blender", "GLSL"],
-        level: 75,
+    {
+        id: 3,
+        label: "UI/UX Design",
+        desc: "User-Centered Digital Experiences",
+        icon: TrendingUp,
+        color: "#f59e0b",
+        shadow: "rgba(245, 158, 11, 0.35)",
+        tags: ["Figma", "Prototyping", "Design Systems"],
+        level: 90,
         accent: "#f59e0b"
     },
-    { 
-        id: 5, label: "Cloud Ops", desc: "AWS & CI/CD Pipelines", 
-        icon: Cloud, color: "#10b981", shadow: "rgba(16, 185, 129, 0.35)",
-        tags: ["AWS", "Docker", "DevOps"],
+    {
+        id: 4,
+        label: "IoT & Embedded Systems",
+        desc: "Hardware Integration & Smart Devices",
+        icon: Box,
+        color: "#10b981",
+        shadow: "rgba(16, 185, 129, 0.35)",
+        tags: ["Arduino", "Sensors", "Embedded C"],
         level: 78,
         accent: "#10b981"
     },
-    { 
-        id: 6, label: "Data Science", desc: "Analytics & Intelligence", 
-        icon: Database, color: "#6366f1", shadow: "rgba(99, 102, 241, 0.35)",
-        tags: ["Pandas", "SQL", "Visualization"],
-        level: 85,
-        accent: "#6366f1"
-    },
-    { 
-        id: 7, label: "Cybersecurity", desc: "Threat Modeling & Auth", 
-        icon: Lock, color: "#ef4444", shadow: "rgba(239, 68, 68, 0.35)",
-        tags: ["Pen Testing", "OAuth", "Firewalls"],
-        level: 72,
-        accent: "#ef4444"
+    {
+        id: 5,
+        label: "Web3 Development",
+        desc: "Blockchain Applications & Smart Contracts",
+        icon: Cloud,
+        color: "#3b82f6",
+        shadow: "rgba(59, 130, 246, 0.35)",
+        tags: ["Solidity", "Web3.js", "IPFS"],
+        level: 76,
+        accent: "#3b82f6"
     },
 ];
 

@@ -57,7 +57,7 @@ export default function About() {
 
                 {/* Bento Grid (Quadrant Style) */}
                 <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-auto lg:h-[800px] max-w-7xl mx-auto">
-                    
+
                     {/* Main Bio Card (Big Quadrant) */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -73,7 +73,7 @@ export default function About() {
 
                         <div className="space-y-8 relative z-10">
                             <h3 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white leading-tight">
-                                Architecting <br/>
+                                Architecting <br />
                                 <span className="text-neonPurple">Digital</span> Experiences
                             </h3>
                             <p className="text-xl leading-relaxed font-light max-w-lg flex flex-wrap gap-x-1.5">
@@ -97,7 +97,7 @@ export default function About() {
                                 Get in Touch
                             </LiquidButton>
                             <div className="flex -space-x-4">
-                                {[1,2,3].map(i => (
+                                {[1, 2, 3].map(i => (
                                     <div key={i} className={`w-12 h-12 rounded-full border-4 border-white dark:border-[#0a0a0c] bg-slate-200 dark:bg-white/10 flex items-center justify-center text-[10px] font-bold`}>
                                         {i === 3 ? "Dev" : "•"}
                                     </div>
@@ -115,7 +115,7 @@ export default function About() {
                         className="md:col-span-2 md:row-span-1 group relative overflow-hidden rounded-[2.5rem] bg-slate-100 dark:bg-white/5 border border-black/5 dark:border-white/10"
                     >
                         <Image
-                            src="/esther.png"
+                            src="/esther1.png"
                             alt="Profile"
                             fill
                             priority
@@ -138,7 +138,7 @@ export default function About() {
                         className="md:col-span-1 md:row-span-1 group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-white/[0.03] border border-black/5 dark:border-white/10 p-8 flex flex-col justify-center items-center text-center hover:bg-neonPurple/5 transition-colors duration-500"
                     >
                         <span className="text-5xl font-black text-neonPurple mb-2">{projectCountLabel(projects.length)}</span>
-                        <span className="text-xs font-bold tracking-[0.2em] uppercase text-slate-500">Projects <br/> Delivered</span>
+                        <span className="text-xs font-bold tracking-[0.2em] uppercase text-slate-500">Projects <br /> Delivered</span>
                     </motion.div>
 
                     {/* Skills/Focus Card */}
@@ -153,7 +153,7 @@ export default function About() {
                             <div className="w-2 h-2 rounded-full bg-white dark:bg-black" />
                         </div>
                         <div>
-                            <h4 className="text-lg font-bold leading-tight mb-2">Focusing on <br/> Scalable Systems</h4>
+                            <h4 className="text-lg font-bold leading-tight mb-2">Focusing on <br /> Scalable Systems</h4>
                             <p className="text-xs opacity-60 font-medium">Mobile Development, Clean UI/UX & Backend APIs.</p>
                         </div>
                     </motion.div>

@@ -48,9 +48,9 @@ export default function ScrollRevealText() {
     const floatXRight = useTransform(springProgress, [0, 1], [200, -200]);
 
     const paragraph1 =
-        "I build digital experiences that blend AI, clean engineering, and thoughtful design. From neural networks to immersive interfaces, I focus on work that is sharp, purposeful, and built to solve real problems.";
+        "I create digital experiences that combine creativity, smart technology, and clean engineering. I enjoy building ideas that are useful, polished, and made to leave a lasting impression.";
     const paragraph2 =
-        "Whether it is a full-stack web app, a game engine prototype, or an AI-powered tool, I bring technical depth and creative vision to every project — turning ideas into products people can actually use.";
+        "From web products to immersive interfaces, I bring a thoughtful mix of design, problem-solving, and technical depth to every project I take on.";
 
     const words1 = paragraph1.split(" ");
     const words2 = paragraph2.split(" ");
