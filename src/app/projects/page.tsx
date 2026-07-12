@@ -196,7 +196,7 @@ export default function AllProjectsPage() {
                                                     </div>
 
                                                     <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4 line-clamp-2">
-                                                        {project.desc}
+                                                        {project.description}
                                                     </p>
 
                                                     {/* Tech tags */}
