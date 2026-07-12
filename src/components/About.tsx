@@ -115,12 +115,12 @@ export default function About() {
                         className="md:col-span-2 md:row-span-1 group relative overflow-hidden rounded-[2.5rem] bg-slate-100 dark:bg-white/5 border border-black/5 dark:border-white/10"
                     >
                         <Image
-                            src="/esther1.png"
+                            src="/esther.png"
                             alt="Profile"
                             fill
                             priority
                             sizes="(max-width: 768px) 100vw, 400px"
-                            className="object-cover transition-all duration-1000 group-hover:scale-105"
+                            className="object-cover object-top transition-all duration-1000 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                         <div className="absolute bottom-8 left-8 text-white opacity-0 group-hover:opacity-100 transition-all duration-700 transform translate-y-4 group-hover:translate-y-0">

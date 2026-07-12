@@ -62,7 +62,7 @@ export const educationEntries: EducationEntry[] = [
             "Creativity",
             "Teamwork",
         ],
-        image: "/education_espoir.png",
+        image: "/logo_espoir.png",
         logo: "/logo_espoir.png",
         accent: "blue",
     },

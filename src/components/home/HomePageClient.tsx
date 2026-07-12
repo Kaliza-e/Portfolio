@@ -33,9 +33,7 @@ export default function HomePageClient() {
 
     return (
         <>
-            <a href="#main-content" className="skip-link">
-                Skip to content
-            </a>
+
 
             <LoadingScreen onComplete={onEnterComplete} />
 

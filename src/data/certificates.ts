@@ -51,30 +51,6 @@ export const certificates: Certificate[] = [
     },
     {
         id: 6,
-        title: "Unstop Week of Wins - Day 1: GIVA",
-        issuer: "Unstop",
-        date: "2025",
-        description: "Certificate of Participation for Day 1 - GIVA of Unstop Week-of-Wins organised by Unstop.",
-        image: "/certificates/Giva.pdf",
-    },
-    {
-        id: 7,
-        title: "Unstop Week of Wins - Day 2: Hammer",
-        issuer: "Unstop",
-        date: "2025",
-        description: "Certificate of Participation for Day 2 - Hammer of Unstop Week-of-Wins organised by Unstop.",
-        image: "/certificates/Hammer.pdf",
-    },
-    {
-        id: 8,
-        title: "Unstop Week of Wins - Day 4: Joyspoon",
-        issuer: "Unstop",
-        date: "2025",
-        description: "Certificate of Participation for Day 4 - Joyspoon of Unstop Week-of-Wins organised by Unstop.",
-        image: "/certificates/WeekOfWins.pdf",
-    },
-    {
-        id: 9,
         title: "Introduction to Java",
         issuer: "Sololearn",
         date: "2025",
@@ -82,7 +58,7 @@ export const certificates: Certificate[] = [
         image: "/certificates/Sololearn Java.pdf",
     },
     {
-        id: 10,
+        id: 7,
         title: "Vibe Coding",
         issuer: "Sololearn",
         date: "2025",
@@ -90,7 +66,7 @@ export const certificates: Certificate[] = [
         image: "/certificates/SololearnCertificate.pdf",
     },
     {
-        id: 11,
+        id: 8,
         title: "Yale Young African Scholars (YYAS) 2026",
         issuer: "Yale University",
         date: "07 2026",
@@ -98,15 +74,7 @@ export const certificates: Certificate[] = [
         image: "/certificates/LetterYale.pdf",
     },
     {
-        id: 12,
-        title: "Ordinary Level Certificate",
-        issuer: "NESA - National Examination and School Inspection Authority",
-        date: "06 2025",
-        description: "Rwanda National Examinations - Ordinary Level. Weighted Aggregate: 54. Mention: PASS.",
-        image: "/certificates/ResultSlip.pdf",
-    },
-    {
-        id: 13,
+        id: 9,
         title: "African Girls Can Code Initiative",
         issuer: "AGCCI",
         date: "2024",
@@ -114,7 +82,7 @@ export const certificates: Certificate[] = [
         image: "/certificates/AGCCI.pdf",
     },
     {
-        id: 14,
+        id: 10,
         title: "Wavumbuzi Entrepreneurship Challenge",
         issuer: "Wavumbuzi",
         date: "2025",
@@ -122,7 +90,7 @@ export const certificates: Certificate[] = [
         image: "/certificates/wavumbuzi-entrepreuship-challenge-certificate-1.pdf",
     },
     {
-        id: 15,
+        id: 11,
         title: "Imbuto Foundation Award",
         issuer: "Imbuto Foundation",
         date: "2024",

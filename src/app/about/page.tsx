@@ -56,7 +56,7 @@ export default function AboutPage() {
                                     src="/esther.png"
                                     alt="Kaliza Esther"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover object-top"
                                 />
                             </div>
                             <div className="absolute -bottom-6 -right-6 bg-white dark:bg-slate-900 p-6 rounded-3xl shadow-xl border border-slate-100 dark:border-white/10 z-20">
@@ -86,15 +86,22 @@ export default function AboutPage() {
                         >
                             <div className="flex items-center gap-6 mb-8">
                                 <div className="w-16 h-16 rounded-3xl bg-white dark:bg-white/5 flex items-center justify-center shadow-lg">
-                                    <Users className="text-neonPurple" size={32} />
+                                    <Cpu className="text-neonPurple" size={32} />
                                 </div>
+
                                 <div>
-                                    <h3 className="text-2xl font-bold">Invantros Community</h3>
-                                    <p className="text-neonPurple font-bold text-sm uppercase tracking-widest">Co-Founder & COO</p>
+                                    <h3 className="text-2xl font-bold">
+                                        Artificial Intelligence & Innovation
+                                    </h3>
+
+                                    <p className="text-neonPurple font-bold text-sm uppercase tracking-widest">
+                                        Current Learning Focus
+                                    </p>
                                 </div>
                             </div>
+
                             <p className="text-slate-600 dark:text-white/60 leading-relaxed">
-                                Leading the operational strategy and community growth for Invantros. We are dedicated to fostering innovation and building a collaborative ecosystem for developers and creators.
+                                I am continuously expanding my knowledge in Artificial Intelligence, Machine Learning, IoT systems, and modern software engineering. I enjoy participating in hackathons and innovation challenges where I can apply technology to solve meaningful community problems.
                             </p>
                         </motion.div>
 
@@ -105,15 +112,22 @@ export default function AboutPage() {
                         >
                             <div className="flex items-center gap-6 mb-8">
                                 <div className="w-16 h-16 rounded-3xl bg-white dark:bg-white/5 flex items-center justify-center shadow-lg">
-                                    <Palette className="text-neonBlue" size={32} />
+                                    <Sparkles className="text-neonBlue" size={32} />
                                 </div>
+
                                 <div>
-                                    <h3 className="text-2xl font-bold">Devmach Company</h3>
-                                    <p className="text-neonBlue font-bold text-sm uppercase tracking-widest">Designer & Developer</p>
+                                    <h3 className="text-2xl font-bold">
+                                        Future Vision
+                                    </h3>
+
+                                    <p className="text-neonBlue font-bold text-sm uppercase tracking-widest">
+                                        IwacuTech
+                                    </p>
                                 </div>
                             </div>
+
                             <p className="text-slate-600 dark:text-white/60 leading-relaxed">
-                                Crafting high-fidelity user interfaces and seamless experiences at Devmach. Bridging the gap between complex software logic and intuitive visual design.
+                                I aspire to establish IwacuTech, a technology company focused on creating innovative software solutions that improve education, healthcare, transportation, agriculture, and everyday life across Africa through responsible technology and artificial intelligence.
                             </p>
                         </motion.div>
                     </div>
@@ -130,14 +144,19 @@ export default function AboutPage() {
                             </div>
                             <div className="md:w-2/3 space-y-8 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
                                 <p>
-                                    My interest in technology began at a young age, sparked by a fascination with how things work under the hood. This curiosity led me to pursue software development, where I've been able to combine my love for logic with the practical application of building dynamic web and mobile applications.
+                                    My journey into technology began when I attended the African Girls Can Code Initiative  Camp, where I was introduced to programming for the very first time. That experience inspired me to pursue software development and showed me how technology can be used to create meaningful change.
                                 </p>
+
                                 <p>
-                                    Over the years, I've worked on a wide range of projects—from UI/UX design systems to building scalable web applications and mobile apps with modern frameworks. This diverse background has given me a unique perspective on product development and the ability to craft human-centered digital experiences.
+                                    Since then, I have continued building my skills at Rwanda Coding Academy, developing projects across web development, mobile applications,  IoT systems, and UI/UX design. I enjoy learning new technologies, collaborating with others during hackathons, and constantly challenging myself to create better solutions for real-world problems.
+                                </p>
+
+                                <p>
+                                    Today, I continue exploring software engineering while preparing for university, with the long-term vision of becoming an AI engineer and entrepreneur who builds technology capable of improving lives both in Rwanda and around the world.
                                 </p>
                                 <div className="grid grid-cols-2 gap-4 pt-8">
                                     <div className="p-6 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10">
-                                        <p className="text-3xl font-bold text-neonPurple">2020</p>
+                                        <p className="text-3xl font-bold text-neonPurple">2024</p>
                                         <p className="text-sm font-bold uppercase tracking-widest mt-2">Started Coding</p>
                                     </div>
                                     <div className="p-6 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10">

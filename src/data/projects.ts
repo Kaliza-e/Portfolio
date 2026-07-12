@@ -90,7 +90,7 @@ export const projects: Project[] = [
         id: 5,
         slug: "isokosense",
         title: "IsokoSense",
-        date: "2024",
+        date: "2026",
         description:
             "A smart IoT solution for monitoring water quality and usage with live dashboards, analytics, and automated reporting for sustainable resource management.",
         image: "/project_isokosense.png",
@@ -104,7 +104,7 @@ export const projects: Project[] = [
         id: 6,
         slug: "foodly",
         title: "Foodly",
-        date: "2023",
+        date: "2025",
         description:
             "A full-stack recipe discovery and sharing platform where users can explore recipes, upload their own dishes, and engage with a community of food lovers.",
         image: "/project_foodly.png",
@@ -118,7 +118,7 @@ export const projects: Project[] = [
         id: 7,
         slug: "musica",
         title: "Musica",
-        date: "2023",
+        date: "2026",
         description:
             "A modern music streaming application featuring playlists, artist discovery, responsive design, and an engaging user experience.",
         image: "/project_musica.png",
