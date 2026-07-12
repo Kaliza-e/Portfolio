@@ -27,10 +27,10 @@ export default function ContactPage() {
                     >
                         <span className="text-xs font-black tracking-[0.5em] uppercase text-neonPurple mb-4 block">Connection</span>
                         <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-none uppercase">
-                            Let's <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-neonPurple to-neonBlue">Synchronize</span>
+                            Let's <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-neonPurple to-neonBlue">Talk</span>
                         </h1>
                         <p className="text-xl text-slate-500 dark:text-white/40 max-w-2xl mx-auto font-medium">
-                            Whether you have a groundbreaking project in mind or just want to discuss scalable systems, my inbox is always open.
+                            Whether you have a  project in mind or just want to discuss scalable systems, my inbox is always open.
                         </p>
                     </motion.div>
                 </div>
@@ -91,7 +91,7 @@ export default function ContactPage() {
                             </div>
                             <h3 className="text-2xl md:text-3xl font-black mb-3">Availability Status</h3>
                             <p className="text-base md:text-lg text-slate-600 dark:text-white/70 mb-6 leading-relaxed max-w-xl mx-auto">
-                                Currently accepting high-impact projects and innovative collaborations. Responses usually take less than 24 hours.
+                                Currently open to  projects and innovative collaborations. Responses usually take less than 24 hours.
                             </p>
                             <div className="flex items-center justify-center gap-3">
                                 <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
@@ -113,7 +113,7 @@ export default function ContactPage() {
                                 <div className="p-3 rounded-2xl bg-neonPurple/10 text-neonPurple">
                                     <MessageSquare size={24} />
                                 </div>
-                                <h3 className="text-2xl font-bold">Transmit Message</h3>
+                                <h3 className="text-2xl font-bold">Send Message</h3>
                             </div>
 
                             <form className="space-y-6" onSubmit={handleSubmit}>

@@ -59,17 +59,7 @@ export default function AboutPage() {
                                     className="object-cover object-top"
                                 />
                             </div>
-                            <div className="absolute -bottom-6 -right-6 bg-white dark:bg-slate-900 p-6 rounded-3xl shadow-xl border border-slate-100 dark:border-white/10 z-20">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-2xl bg-neonPurple/10 flex items-center justify-center">
-                                        <Sparkles className="text-neonPurple" />
-                                    </div>
-                                    <div>
-                                        <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Current Focus</p>
-                                        <p className="font-bold">Scalable Systems & UI/UX</p>
-                                    </div>
-                                </div>
-                            </div>
+
                         </motion.div>
                     </div>
                 </div>

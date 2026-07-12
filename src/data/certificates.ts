@@ -79,7 +79,7 @@ export const certificates: Certificate[] = [
         issuer: "AGCCI",
         date: "2024",
         description: "Training program for girls to empower them in STEM. Strongly recognized to be part of this initiative with awards and certificates.",
-        image: "/certificates/AGCCI.pdf",
+        image: "/certificates/AGCCI.jpg",
     },
     {
         id: 10,
@@ -95,7 +95,16 @@ export const certificates: Certificate[] = [
         issuer: "Imbuto Foundation",
         date: "2024",
         description: "Awarded twice for academic excellence and recognized as the best performing girl in my sector during primary and level leaving national examinations.",
-        image: "/certificates/Imbuto.pdf",
+        image: "/certificates/Imbuto.jpg",
+    },
+    {
+        id: 12,
+        title: "Ideation & Prototyping",
+        issuer: "Ideation and Prototyping",
+        date: "2024",
+        description:
+            "Recognized for successfully completing training in ideation and prototyping, developing innovative solutions through design thinking, problem identification, brainstorming, and rapid prototype development.",
+        image: "/certificates/Ideation.jpg",
     },
 ];
 
