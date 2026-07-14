@@ -119,7 +119,7 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
                             transition={{ delay: 0.8, duration: 0.6 }}
                             className="loading-roles"
                         >
-                            <span>INTELLIGENCE</span>
+                            <span>SOFTWARE</span>
                             <span className="loading-diamond">◆</span>
                             <span>DESIGN</span>
                             <span className="loading-diamond">◆</span>
