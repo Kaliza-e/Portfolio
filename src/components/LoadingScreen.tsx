@@ -68,7 +68,19 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
                                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                                 className="relative w-24 h-24 rounded-full bg-gradient-to-tr from-neonPurple to-neonCyan blur-[2px] flex items-center justify-center shadow-[0_0_40px_rgba(168,85,247,0.6)]"
                             >
-                                <div className="w-16 h-16 bg-black rounded-full" />
+                                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center">
+                                    <span
+                                        className="text-[11px] font-black tracking-[0.15em] uppercase select-none"
+                                        style={{
+                                            background: "linear-gradient(135deg, #a855f7, #06b6d4)",
+                                            WebkitBackgroundClip: "text",
+                                            WebkitTextFillColor: "transparent",
+                                            filter: "none",
+                                        }}
+                                    >
+                                        KE
+                                    </span>
+                                </div>
                             </motion.div>
 
                             <svg className="absolute inset-0 w-full h-full -rotate-90" aria-hidden>
@@ -126,9 +138,7 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
                             <span className="loading-percent">{Math.floor(Math.min(progress, 100))}%</span>
                         </motion.div>
 
-                        <button type="button" onClick={finish} className="loading-skip-btn">
-                            Skip intro
-                        </button>
+
                     </div>
 
                     <div className="lc tl" /><div className="lc tr" />

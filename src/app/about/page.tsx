@@ -91,7 +91,7 @@ export default function AboutPage() {
                             </div>
 
                             <p className="text-slate-600 dark:text-white/60 leading-relaxed">
-                                I am continuously expanding my knowledge in Artificial Intelligence, Machine Learning, IoT systems, and modern software engineering. I enjoy participating in hackathons and innovation challenges where I can apply technology to solve meaningful community problems.
+                                I am currently exploring my knowledge in Artificial Intelligence, Machine Learning, IoT systems, and modern software engineering. I enjoy participating in hackathons and innovation challenges where I can apply technology to solve meaningful community problems.
                             </p>
                         </motion.div>
 

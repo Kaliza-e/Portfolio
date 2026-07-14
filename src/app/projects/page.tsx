@@ -81,7 +81,7 @@ export default function AllProjectsPage() {
                         </h1>
 
                         <p className="max-w-xl text-lg text-slate-500 dark:text-white/40 font-medium leading-relaxed mb-12">
-                            A comprehensive archive of {projects.length} projects spanning AI, game development, web engineering, and design.
+                            Passionate Full Stack Software Developer, Mobile Application Developer, and UI/UX Designer building intelligent, scalable, and user-centered digital experiences.
                         </p>
 
                         {/* Year filter pills */}

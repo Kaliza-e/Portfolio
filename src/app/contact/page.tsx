@@ -129,7 +129,7 @@ export default function ContactPage() {
                                 />
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label htmlFor="contact-name" className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Identity</label>
+                                        <label htmlFor="contact-name" className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Full Names</label>
                                         <input
                                             id="contact-name"
                                             type="text"
@@ -141,7 +141,7 @@ export default function ContactPage() {
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label htmlFor="contact-email" className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Signal (Email)</label>
+                                        <label htmlFor="contact-email" className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Email</label>
                                         <input
                                             id="contact-email"
                                             type="email"
@@ -165,7 +165,7 @@ export default function ContactPage() {
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label htmlFor="contact-message" className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Data Stream (Message)</label>
+                                    <label htmlFor="contact-message" className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Message</label>
                                     <textarea
                                         id="contact-message"
                                         rows={5}
@@ -208,7 +208,7 @@ export default function ContactPage() {
                                     disabled={isSubmitting}
                                     className="w-full py-5 text-sm tracking-[0.2em] disabled:opacity-60 disabled:cursor-not-allowed"
                                 >
-                                    {isSubmitting ? "Transmitting..." : "Initiate Transmission"}
+                                    {isSubmitting ? "Sending..." : "Send Message"}
                                     <Send size={18} />
                                 </LiquidButton>
                             </form>

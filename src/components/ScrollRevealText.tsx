@@ -55,37 +55,12 @@ export default function ScrollRevealText() {
     const words1 = paragraph1.split(" ");
     const words2 = paragraph2.split(" ");
     const totalWords = words1.length + words2.length;
-    const particles = Array.from({ length: 24 }, (_, i) => ({
-        id: i,
-        left: `${(i % 6) * 16 + 4}%`,
-        top: `${(i % 4) * 20 + 6}%`,
-        size: 3 + (i % 4) * 2,
-        duration: 8 + (i % 5) * 2,
-        delay: (i % 7) * 0.8,
-    }));
 
     return (
         <section
             ref={containerRef}
             className="py-40 relative overflow-hidden flex flex-col items-center justify-center min-h-screen transition-colors duration-500"
         >
-            <div className="particle-bg pointer-events-none absolute inset-0 overflow-hidden">
-                {particles.map((particle) => (
-                    <span
-                        key={particle.id}
-                        className="particle-dot absolute rounded-full"
-                        style={{
-                            left: particle.left,
-                            top: particle.top,
-                            width: `${particle.size}px`,
-                            height: `${particle.size}px`,
-                            animationDuration: `${particle.duration}s`,
-                            animationDelay: `${particle.delay}s`,
-                        }}
-                    />
-                ))}
-            </div>
-
             <motion.div
                 style={{ x: floatXLeft, opacity: floatOpacity }}
                 className="absolute top-1/4 left-10 text-6xl md:text-8xl font-black text-neonPurple/20 pointer-events-none uppercase"
