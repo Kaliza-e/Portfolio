@@ -46,7 +46,7 @@ export default function RootLayout({
             <body className={`${inter.className} selection:bg-cyber-neon selection:text-black`}>
                 <ThemeProvider
                     attribute="class"
-                    defaultTheme="dark"
+                    defaultTheme="light"
                     enableSystem
                     disableTransitionOnChange
                 >
