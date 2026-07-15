@@ -699,3 +699,9 @@ body {
     display: none;
   }
 }
+
+@media (max-width: 640px) {
+  html, body {
+    overflow-x: hidden;
+  }
+}

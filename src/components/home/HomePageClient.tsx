@@ -13,6 +13,7 @@ import Skills from "@/components/Skills";
 import ScrollRevealText from "@/components/ScrollRevealText";
 import Certificates from "@/components/Certificates";
 import Education from "@/components/Education";
+import ContactSection from "@/components/ContactSection";
 import { siteConfig } from "@/data/site";
 
 export default function HomePageClient() {
@@ -105,6 +106,7 @@ export default function HomePageClient() {
                 <Projects />
                 <Certificates />
                 <Education />
+                <ContactSection />
 
                 <div className="h-[20vh]" />
             </motion.main>
