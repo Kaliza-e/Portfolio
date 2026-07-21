@@ -7,7 +7,7 @@ export const siteConfig = {
     email: "kalizaesther5@gmail.com",
     phone: "250728045049",
     location: "Kigali, Rwanda",
-    resumePath: "/certificates/KalizaEstherProfessionalResume.pdf",
+    resumePath: "/certificates/KALIZA-Resume.pdf",
     resumeLabel: "Download CV",
     resumeDownloadName: "",
     socials: [
