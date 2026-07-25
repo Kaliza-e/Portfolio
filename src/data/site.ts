@@ -5,7 +5,7 @@ export const siteConfig = {
         "Portfolio of Kaliza Esther — Full stack web developer, mobile developer and ui designer.",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://github.com/Kaliza-e",
     email: "kalizaesther5@gmail.com",
-    phone: "250728045049",
+    phone: "250796250345",
     location: "Kigali, Rwanda",
     resumePath: "/certificates/KALIZA-Resume.pdf",
     resumeLabel: "Download CV",

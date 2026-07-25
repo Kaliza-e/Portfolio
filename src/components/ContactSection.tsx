@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Globe, Code2, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, MapPin, Globe, Code2, ArrowUpRight, Star } from "lucide-react";
 import { LiquidButton } from "@/components/ui/LiquidButton";
 import { siteConfig } from "@/data/site";
 
@@ -40,6 +40,7 @@ export default function ContactSection() {
                         { icon: MapPin, title: "Location", value: siteConfig.location, color: "text-neonCyan" },
                         { icon: Globe, title: "LinkedIn", value: "linkedin.com/in/kaliza-esther", href: "https://www.linkedin.com/in/kaliza-esther-794108415", color: "text-neonPurple" },
                         { icon: Code2, title: "GitHub", value: "github.com/Kaliza-e", href: "https://github.com/Kaliza-e", color: "text-neonBlue" },
+                        { icon: Star, title: "Instagram", value: "instagram.com/kaliz_a1108", href: "https://www.instagram.com/kaliz_a1108/", color: "text-neonBlue" },
                     ].map((item, i) =>
                         item.href ? (
                             <a
