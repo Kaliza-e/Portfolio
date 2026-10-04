@@ -1,4 +1,4 @@
-import { Cpu, Globe, Users, Zap, Droplets, Utensils, Music } from "lucide-react";
+import { Globe, Users, Droplets, Utensils, Music, BookOpen, Shield } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export interface Project {
@@ -24,9 +24,9 @@ export const projects: Project[] = [
         title: "Movia",
         date: "2026",
         description:
-            "A modern smart transportation management system that enables passengers to book buses, track routes in real time, and allows administrators to manage buses, schedules, drivers, and routes efficiently.",
+            "Smart bus booking and real-time transit management platform for passengers and administrators.",
         longDesc:
-            "Movia is a full-stack transportation platform built to modernize public transit. Passengers can book rides, track buses live on a map, and receive real-time alerts — while admins manage fleets, schedules, drivers, and analytics from a unified dashboard.",
+            "A full-stack transportation platform featuring real-time bus tracking, route management, online ticket booking, and fleet management analytics.",
         image: "/project_movia.png",
         hexColor: "#a855f7",
         tech: ["React", "Spring Boot", "PostgreSQL", "JWT", "Leaflet", "WebSocket", "Docker"],
@@ -37,30 +37,47 @@ export const projects: Project[] = [
     },
     {
         id: 2,
-        slug: "aura",
-        title: "Aura",
+        slug: "rarebridge",
+        title: "RareBridge",
         date: "2026",
         description:
-            "An emergency alert mobile app designed to help users quickly alert trusted contacts, share live locations, and access emergency assistance.",
+            "Information and support platform connecting rare-disease patients, caregivers, resources, and specialist discovery.",
         longDesc:
-            "Aura empowers users to trigger emergency alerts with a single shake gesture. It instantly notifies trusted contacts with a live location link and connects to local emergency services — all without requiring the user to unlock their phone.",
-        image: "/project_aura.png",
-        hexColor: "#3b82f6",
-        tech: ["React Native", "React", "Node.js", "Express", "MongoDB"],
-        live: "#",
+            "A health-information initiative connecting rare-disease patients and families with verified resources, specialist discovery, and community support.",
+        image: "/project_rarebridge.png",
+        hexColor: "#ec4899",
+        tech: ["NestJS", "Prisma", "PostgreSQL", "Google Sheets API", "React"],
+        live: "https://rarebridge-frontend.vercel.app/",
         code: "#",
         featured: true,
-        icon: Zap,
+        icon: Shield,
     },
     {
         id: 3,
+        slug: "tour",
+        title: "Tour — Between Minds",
+        date: "2026",
+        description:
+            "Student-led research publishing platform for submitting, reviewing, and publishing academic research.",
+        longDesc:
+            "A research publishing platform designed to streamline paper submissions, peer feedback, administrative reviews, and knowledge discovery.",
+        image: "/project_tour.png",
+        hexColor: "#3b82f6",
+        tech: ["Next.js", "React", "TypeScript", "Prisma", "Neon PostgreSQL"],
+        live: "https://tour-between-minds.vercel.app/",
+        code: "#",
+        featured: true,
+        icon: BookOpen,
+    },
+    {
+        id: 4,
         slug: "terimbere",
         title: "Terimbere Cooperative",
         date: "2026",
         description:
-            "A digital cooperative management platform that simplifies member registration, savings, loans, contributions, financial reporting, and administrative operations.",
+            "Digital cooperative platform simplifying member onboarding, savings, loans, and automated financial reporting.",
         longDesc:
-            "Terimbere digitizes the full lifecycle of a cooperative — from member onboarding and savings tracking to loan management, contribution records, and automated financial reports — replacing manual paper-based processes with a secure web platform.",
+            "A web platform digitizing cooperative operations including member savings tracking, loan administration, contribution records, and financial reports.",
         image: "/project_terimbere.png",
         hexColor: "#06b6d4",
         tech: ["Spring Boot", "React", "PostgreSQL", "REST API"],
@@ -70,29 +87,12 @@ export const projects: Project[] = [
         icon: Users,
     },
     {
-        id: 4,
-        slug: "noifix",
-        title: "NoiFix",
-        date: "2026",
-        description:
-            "An IoT-powered renewable energy harvesting system that converts environmental noise into electrical energy while monitoring voltage generation through real-time dashboards.",
-        longDesc:
-            "NoiFix is an experimental IoT project that harvests ambient noise energy via piezoelectric transducers, converts it to usable electrical charge, and visualizes the output in real-time through a web dashboard with live charts and analytics.",
-        image: "/project_noifix.png",
-        hexColor: "#22c55e",
-        tech: ["Arduino", "React", "Node.js", "Python", "MongoDB", "IoT"],
-        live: "#",
-        code: "#",
-        featured: true,
-        icon: Cpu,
-    },
-    {
         id: 5,
         slug: "isokosense",
         title: "IsokoSense",
         date: "2026",
         description:
-            "A smart IoT solution for monitoring water quality and usage with live dashboards, analytics, and automated reporting for sustainable resource management.",
+            "IoT solution for real-time water quality monitoring, live data visualization, and automated resource reporting.",
         image: "/project_isokosense.png",
         hexColor: "#14b8a6",
         tech: ["React", "Spring Boot", "PostgreSQL", "IoT"],
@@ -106,7 +106,7 @@ export const projects: Project[] = [
         title: "Foodly",
         date: "2025",
         description:
-            "A full-stack recipe discovery and sharing platform where users can explore recipes, upload their own dishes, and engage with a community of food lovers.",
+            "Full-stack recipe discovery and sharing platform for exploring and publishing culinary recipes.",
         image: "/project_foodly.png",
         hexColor: "#f59e0b",
         tech: ["React", "Node.js", "Express", "MongoDB"],
@@ -120,9 +120,9 @@ export const projects: Project[] = [
         title: "Musica",
         date: "2026",
         description:
-            "A modern music streaming application featuring playlists, artist discovery, responsive design, and an engaging user experience.",
+            "Modern music streaming application featuring playlists, artist discovery, and interactive media controls.",
         image: "/project_musica.png",
-        hexColor: "#ec4899",
+        hexColor: "#8b5cf6",
         tech: ["React", "Node.js", "Express", "MongoDB"],
         live: "#",
         code: "https://github.com/Kaliza-e/Musica.git",

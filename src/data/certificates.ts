@@ -26,19 +26,27 @@ export const certificates: Certificate[] = [
         image: "/certificates/Certificate-QR-2025-100AC3DC0C95-89c9ad3feebc516799f54faa50932a2e.pdf",
     },
     {
-        id: 4,
-        title: "Immersive Education Essay Competition",
+        id: 3,
+        title: "Immerse Education Essay Competition",
         issuer: "Immerse Education",
         date: "10 2025",
         description: "Certified Entrant in the Immerse Education Essay Competition, recognising participation and achievement.",
         image: "/certificates/EC R1 2026 Certificate - Kaliza Esther.pdf",
     },
     {
+        id: 4,
+        title: "Yale Young African Scholars (YYAS) — Completion Certificate",
+        issuer: "Yale University",
+        date: "21 July 2026",
+        description: "Official Certificate of Completion certifying successful completion of all elements of the YYAS Online session of the Yale Young African Scholars program (16 July – 21 July 2026).",
+        image: "/certificates/Certificate-YYAS.pdf",
+    },
+    {
         id: 5,
-        title: "Yale Young African Scholars (YYAS) 2026",
+        title: "Yale Young African Scholars (YYAS) — Admission Letter",
         issuer: "Yale University",
         date: "07 2026",
-        description: "Admission to the 2026 Yale Young African Scholars Online College Prep Workshop (16-21 July 2026). Selected from thousands of applicants from over 40 African countries.",
+        description: "Official Admission Letter to the 2026 Yale Young African Scholars Online College Prep Workshop. Selected out of thousands of applicants from over 40 African countries.",
         image: "/certificates/LetterYale.pdf",
     },
     {
@@ -46,7 +54,7 @@ export const certificates: Certificate[] = [
         title: "African Girls Can Code Initiative",
         issuer: "AGCCI",
         date: "2024",
-        description: "Training program for girls to empower them in STEM. Strongly recognized to be part of this initiative with awards and certificates.",
+        description: "Training program empowering girls in STEM and computer science. Recognized with certificate of achievement during the intensive coding camp.",
         image: "/certificates/AGCCI.jpg",
     },
     {
@@ -54,7 +62,7 @@ export const certificates: Certificate[] = [
         title: "Imbuto Foundation Award",
         issuer: "Imbuto Foundation",
         date: "2024",
-        description: "Awarded twice for academic excellence and recognized as the best performing girl in my sector during primary and level leaving national examinations.",
+        description: "Awarded for academic excellence and recognized as the best performing girl in my sector during primary and ordinary level national examinations.",
         image: "/certificates/Imbuto.jpg",
     },
     {
@@ -63,7 +71,7 @@ export const certificates: Certificate[] = [
         issuer: "Ideation and Prototyping",
         date: "2024",
         description:
-            "Recognized for successfully completing training in ideation and prototyping, developing innovative solutions through design thinking, problem identification, brainstorming, and rapid prototype development.",
+            "Recognized for successfully completing training in ideation and prototyping, developing innovative solutions through design thinking, problem identification, and rapid prototype development.",
         image: "/certificates/Ideation.jpg",
     },
 ];

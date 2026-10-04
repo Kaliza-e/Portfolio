@@ -7,6 +7,27 @@ import { LiquidButton } from "@/components/ui/LiquidButton";
 import { useContactForm } from "@/hooks/useContactForm";
 import { siteConfig } from "@/data/site";
 
+function InstagramIcon({ size = 20, className = "" }: { size?: number; className?: string }) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className={className}
+            aria-hidden="true"
+        >
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+        </svg>
+    );
+}
+
 export default function ContactPage() {
     const { formData, status, errorMessage, updateField, handleSubmit, isSubmitting } = useContactForm();
     return (
@@ -30,7 +51,7 @@ export default function ContactPage() {
                             Let's <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-neonPurple to-neonBlue">Talk</span>
                         </h1>
                         <p className="text-xl text-slate-500 dark:text-white/40 max-w-2xl mx-auto font-medium">
-                            Whether you have a  project in mind or just want to discuss scalable systems, my inbox is always open.
+                            Whether you have a project in mind or just want to discuss scalable systems, my inbox is always open.
                         </p>
                     </motion.div>
                 </div>
@@ -38,7 +59,7 @@ export default function ContactPage() {
 
             {/* Contact — stacked, centered */}
             <section className="py-12 md:py-16 pb-24">
-                <div className="container mx-auto px-6 max-w-3xl">
+                <div className="container mx-auto px-6 max-w-4xl">
                     {/* Info cards — top, centered */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -46,13 +67,14 @@ export default function ContactPage() {
                         viewport={{ once: true }}
                         className="space-y-8 mb-12"
                     >
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                             {[
                                 { icon: Mail, title: "Email", value: siteConfig.email, href: `mailto:${siteConfig.email}`, color: "text-neonPurple" },
                                 { icon: Phone, title: "Comm", value: siteConfig.phone, href: `tel:${siteConfig.phone.replace(/\s/g, "")}`, color: "text-neonBlue" },
                                 { icon: MapPin, title: "Base", value: siteConfig.location, color: "text-neonCyan" },
                                 { icon: Globe, title: "LinkedIn", value: "linkedin.com/in/kaliza-esther", href: "https://www.linkedin.com/in/kaliza-esther-794108415", color: "text-neonPurple" },
                                 { icon: Code2, title: "GitHub", value: "github.com/Kaliza-e", href: "https://github.com/Kaliza-e", color: "text-neonBlue" },
+                                { icon: InstagramIcon, title: "Instagram", value: siteConfig.instagramHandle, href: siteConfig.instagram, color: "text-neonPurple" },
                             ].map((item, i) =>
                                 item.href ? (
                                     <a

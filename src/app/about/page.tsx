@@ -3,11 +3,11 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
-import { Users, Palette, Sparkles, Cpu, Gamepad2, Laptop, Code } from "lucide-react";
+import { Users, Palette, Sparkles, Cpu, Laptop, Code, Music, Heart, FileDown } from "lucide-react";
 import { projects } from "@/data/projects";
 import { projectCountLabel, siteConfig } from "@/data/site";
-import { FileDown } from "lucide-react";
 import { LiquidButton } from "@/components/ui/LiquidButton";
+import Experience from "@/components/Experience";
 
 export default function AboutPage() {
     return (
@@ -30,10 +30,10 @@ export default function AboutPage() {
                         >
                             <span className="text-xs font-bold tracking-[0.5em] uppercase text-neonPurple mb-4 block">The Narrative</span>
                             <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-none">
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neonPurple to-neonBlue">Full Stack Developer</span>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neonPurple to-neonBlue">Kaliza Esther</span>
                             </h1>
                             <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl mb-8">
-                                A Full Stack Web Developer and UI Designer who believes that great products are not just built — they are designed to feel alive.
+                                Student at Rwanda Coding Academy, full-stack developer, and technical lead driven by curiosity, empathy, and practical problem-solving.
                             </p>
                             <LiquidButton
                                 href={siteConfig.resumePath}
@@ -65,7 +65,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Roles & Leadership Section */}
+            {/* Roles & Leadership Summary Section */}
             <section className="py-20 relative">
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -81,17 +81,17 @@ export default function AboutPage() {
 
                                 <div>
                                     <h3 className="text-2xl font-bold">
-                                        Artificial Intelligence & Innovation
+                                        Empathetic Software Engineering
                                     </h3>
 
                                     <p className="text-neonPurple font-bold text-sm uppercase tracking-widest">
-                                        Current Learning Focus
+                                        Core Philosophy
                                     </p>
                                 </div>
                             </div>
 
                             <p className="text-slate-600 dark:text-white/60 leading-relaxed">
-                                I am currently exploring my knowledge in Artificial Intelligence, Machine Learning, IoT systems, and modern software engineering. I enjoy participating in hackathons and innovation challenges where I can apply technology to solve meaningful community problems.
+                                I believe technology is at its best when it combines technical capability with genuine human empathy. Whether developing backend APIs with NestJS and Spring Boot, crafting mobile applications, or shaping UI/UX design in Figma, my focus is building accessible solutions that improve everyday life.
                             </p>
                         </motion.div>
 
@@ -107,22 +107,25 @@ export default function AboutPage() {
 
                                 <div>
                                     <h3 className="text-2xl font-bold">
-                                        Future Vision
+                                        Collaborative Tech Leadership
                                     </h3>
 
                                     <p className="text-neonBlue font-bold text-sm uppercase tracking-widest">
-                                        IwacuTech
+                                        Leadership & Vision
                                     </p>
                                 </div>
                             </div>
 
                             <p className="text-slate-600 dark:text-white/60 leading-relaxed">
-                                I aspire to establish IwacuTech, a technology company focused on creating innovative software solutions that improve education, healthcare, transportation, agriculture, and everyday life across Africa through responsible technology and artificial intelligence.
+                                Through roles like Technical Lead at RareBridge and OpportunityMap, I guide product architecture, align development goals with community needs, and work closely with cross-functional teams to translate vision into deployed software.
                             </p>
                         </motion.div>
                     </div>
                 </div>
             </section>
+
+            {/* Detailed Experience Section Component */}
+            <Experience />
 
             {/* Detailed Story Section */}
             <section className="py-32">
@@ -134,24 +137,28 @@ export default function AboutPage() {
                             </div>
                             <div className="md:w-2/3 space-y-8 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
                                 <p>
-                                    My journey into technology began when I attended the African Girls Can Code Initiative  Camp, where I was introduced to programming for the very first time. That experience inspired me to pursue software development and showed me how technology can be used to create meaningful change.
+                                    My interest in technology began with seeing how software can address real challenges in people&apos;s daily lives. Participating in the African Girls Can Code Initiative (AGCCI) in 2024 was a pivotal moment — it deepened my fascination with programming and made the underrepresentation of girls in STEM much more noticeable to me.
                                 </p>
 
                                 <p>
-                                    Since then, I have continued building my skills at Rwanda Coding Academy, developing projects across web development, mobile applications,  IoT systems, and UI/UX design. I enjoy learning new technologies, collaborating with others during hackathons, and constantly challenging myself to create better solutions for real-world problems.
+                                    As a student at Rwanda Coding Academy, I have continued developing my technical skills across computer science education, collaborative engineering, and leadership roles. I work across full-stack web development, backend APIs, databases, mobile application development, and UI/UX design.
                                 </p>
 
                                 <p>
-                                    Today, I continue exploring software engineering while preparing for university, with the long-term vision of becoming an AI engineer and entrepreneur who builds technology capable of improving lives both in Rwanda and around the world.
+                                    Beyond technical work, my background in music and school cultural activities has shaped how I approach collaboration, creativity, and communication. I view engineering and creative expression as deeply connected — both require harmony, precision, and an understanding of the human audience.
+                                </p>
+
+                                <p>
+                                    I have contributed to meaningful platforms such as TOUR (research publishing), RareBridge (rare-disease support), Rwanda E-Pharmacy (digital pharmacy infrastructure), and OpportunityMap (opportunity discovery). I aim to continue building software that combines technical rigor with lasting social impact.
                                 </p>
                                 <div className="grid grid-cols-2 gap-4 pt-8">
                                     <div className="p-6 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10">
                                         <p className="text-3xl font-bold text-neonPurple">2024</p>
-                                        <p className="text-sm font-bold uppercase tracking-widest mt-2">Started Coding</p>
+                                        <p className="text-sm font-bold uppercase tracking-widest mt-2">AGCCI Coding Camp</p>
                                     </div>
                                     <div className="p-6 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10">
                                         <p className="text-3xl font-bold text-neonBlue">{projectCountLabel(projects.length)}</p>
-                                        <p className="text-sm font-bold uppercase tracking-widest mt-2">Projects Completed</p>
+                                        <p className="text-sm font-bold uppercase tracking-widest mt-2">Projects Delivered</p>
                                     </div>
                                 </div>
                             </div>
@@ -163,13 +170,15 @@ export default function AboutPage() {
                             </div>
                             <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 {[
-                                    { title: "Web Development", icon: Laptop, desc: "Crafting high-performance, responsive web apps." },
-                                    { title: "Mobile Development", icon: Cpu, desc: "Building native mobile experiences with React Native." },
-                                    { title: "UI/UX Design", icon: Palette, desc: "Designing beautiful, human-centered interfaces." },
-                                    { title: "System Architecture", icon: Code, desc: "Designing robust and scalable software systems." },
+                                    { title: "Full-Stack Web", icon: Laptop, desc: "Building modern, responsive web apps with Next.js, React, and TypeScript." },
+                                    { title: "Backend & APIs", icon: Code, desc: "Architecting REST APIs and database workflows using NestJS, Spring Boot, Prisma & PostgreSQL." },
+                                    { title: "Mobile Apps", icon: Cpu, desc: "Developing cross-platform mobile experiences with React Native." },
+                                    { title: "UI/UX & Product Design", icon: Palette, desc: "Designing accessible, human-centered interfaces in Figma." },
+                                    { title: "Technical Leadership", icon: Users, desc: "Guiding product architecture, coordinating development, and translating requirements." },
+                                    { title: "Creative Collaboration", icon: Music, desc: "Drawing on musical & cultural activities to foster teamwork and creativity." },
                                 ].map((item, i) => (
                                     <div key={i} className="p-8 rounded-3xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 group hover:border-neonPurple/50 transition-colors">
-                                        <item.icon className="text-neonPurple mb-4 group-hover:scale-110 transition-transform" />
+                                        <item.icon className="text-neonPurple mb-4 group-hover:scale-110 transition-transform" size={24} />
                                         <h4 className="text-xl font-bold mb-2">{item.title}</h4>
                                         <p className="text-sm text-slate-500 dark:text-white/40">{item.desc}</p>
                                     </div>

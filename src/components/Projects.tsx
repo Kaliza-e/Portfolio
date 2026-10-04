@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Globe } from "lucide-react";
 
 function GithubIcon({ size = 16, className = "" }: { size?: number; className?: string }) {
     return (
@@ -32,6 +32,9 @@ function ProjectCard({ project, index }: {
     const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
     const y = useTransform(scrollYProgress, [0, 1], ["0%", "5%"]);
 
+    const targetUrl = project.live !== "#" ? project.live : project.code !== "#" ? project.code : `/projects/${project.slug}`;
+    const isExternal = project.live !== "#" || project.code !== "#";
+
     return (
         <div ref={containerRef} className="h-screen w-full sticky top-0 flex items-center justify-center p-3 md:p-6 lg:p-8 overflow-hidden">
             <motion.div
@@ -46,7 +49,12 @@ function ProjectCard({ project, index }: {
                     <div className="absolute inset-0 bg-gradient-to-tr from-neonPurple/10 via-transparent to-neonBlue/10 z-[1]" />
 
                     {/* Image inside a padded, rounded frame */}
-                    <div className="absolute inset-0 z-[2] flex items-center justify-center p-6 md:p-8 lg:p-10">
+                    <a
+                        href={targetUrl}
+                        target={isExternal ? "_blank" : undefined}
+                        rel={isExternal ? "noopener noreferrer" : undefined}
+                        className="absolute inset-0 z-[2] flex items-center justify-center p-6 md:p-8 lg:p-10 block"
+                    >
                         <div className="relative w-full h-full rounded-xl overflow-hidden shadow-[0_20px_60px_-10px_rgba(0,0,0,0.6)] border border-white/10 group-hover:border-neonPurple/40 transition-colors duration-500">
                             <Image
                                 src={project.image}
@@ -57,7 +65,7 @@ function ProjectCard({ project, index }: {
                                 sizes="(max-width: 1024px) 100vw, 58vw"
                             />
                         </div>
-                    </div>
+                    </a>
 
                     {/* Mobile bottom fade */}
                     <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#0a0a0c]/70 to-transparent z-[3] pointer-events-none lg:hidden" />
@@ -65,7 +73,7 @@ function ProjectCard({ project, index }: {
                     {/* Preview badge */}
                     <div className="absolute top-4 left-4 z-[4] flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-[9px] font-black uppercase tracking-[0.25em] text-white/70">
                         <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                        Preview
+                        {project.live !== "#" ? "Live Site" : "Preview"}
                     </div>
 
                     {/* Index badge */}
@@ -88,13 +96,20 @@ function ProjectCard({ project, index }: {
                             <span className="text-slate-500 dark:text-white/60 text-xs font-bold tracking-widest uppercase">{project.date}</span>
                         </div>
 
-                        <h3 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900 dark:text-white mb-3 lg:mb-5 leading-[1.1] tracking-tight">
-                            {project.title.split(' ').map((word, i) => (
-                                <span key={i} className={i === project.title.split(' ').length - 1 ? "text-transparent bg-clip-text bg-gradient-to-r from-neonPurple to-neonBlue inline-block" : "inline-block"}>
-                                    {word}{' '}
-                                </span>
-                            ))}
-                        </h3>
+                        <a
+                            href={targetUrl}
+                            target={isExternal ? "_blank" : undefined}
+                            rel={isExternal ? "noopener noreferrer" : undefined}
+                            className="group/title block"
+                        >
+                            <h3 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900 dark:text-white mb-3 lg:mb-5 leading-[1.1] tracking-tight group-hover/title:text-neonPurple transition-colors">
+                                {project.title.split(' ').map((word, i) => (
+                                    <span key={i} className={i === project.title.split(' ').length - 1 ? "text-transparent bg-clip-text bg-gradient-to-r from-neonPurple to-neonBlue inline-block" : "inline-block"}>
+                                        {word}{' '}
+                                    </span>
+                                ))}
+                            </h3>
+                        </a>
 
                         <p className="text-xs md:text-sm lg:text-base text-slate-600 dark:text-slate-400 mb-6 lg:mb-8 leading-relaxed max-w-xl">
                             {project.longDesc || project.description}
@@ -111,16 +126,33 @@ function ProjectCard({ project, index }: {
                             ))}
                         </div>
 
-                        <LiquidButton
-                            href={project.code !== "#" ? project.code : `/projects/${project.slug}`}
-                            color="purple"
-                            className="w-max"
-                            external={project.code !== "#"}
-                        >
-                            <GithubIcon size={15} />
-                            VIEW ON GITHUB
-                            <ArrowUpRight size={16} className="-translate-y-0.5" />
-                        </LiquidButton>
+                        <div className="flex flex-wrap items-center gap-3">
+                            {project.live !== "#" && (
+                                <LiquidButton
+                                    href={project.live}
+                                    color="purple"
+                                    className="w-max"
+                                    external
+                                >
+                                    <Globe size={15} />
+                                    VISIT LIVE SITE
+                                    <ArrowUpRight size={16} className="-translate-y-0.5" />
+                                </LiquidButton>
+                            )}
+
+                            {project.code !== "#" && (
+                                <LiquidButton
+                                    href={project.code}
+                                    color={project.live !== "#" ? "cyan" : "purple"}
+                                    className="w-max"
+                                    external
+                                >
+                                    <GithubIcon size={15} />
+                                    VIEW ON GITHUB
+                                    <ArrowUpRight size={16} className="-translate-y-0.5" />
+                                </LiquidButton>
+                            )}
+                        </div>
                     </motion.div>
 
                     {/* Faint Background Number */}

@@ -1,9 +1,30 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Globe, Code2, ArrowUpRight, Star } from "lucide-react";
+import { Mail, Phone, MapPin, Globe, Code2, ArrowUpRight } from "lucide-react";
 import { LiquidButton } from "@/components/ui/LiquidButton";
 import { siteConfig } from "@/data/site";
+
+function InstagramIcon({ size = 20, className = "" }: { size?: number; className?: string }) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className={className}
+            aria-hidden="true"
+        >
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+        </svg>
+    );
+}
 
 export default function ContactSection() {
     return (
@@ -40,7 +61,7 @@ export default function ContactSection() {
                         { icon: MapPin, title: "Location", value: siteConfig.location, color: "text-neonCyan" },
                         { icon: Globe, title: "LinkedIn", value: "linkedin.com/in/kaliza-esther", href: "https://www.linkedin.com/in/kaliza-esther-794108415", color: "text-neonPurple" },
                         { icon: Code2, title: "GitHub", value: "github.com/Kaliza-e", href: "https://github.com/Kaliza-e", color: "text-neonBlue" },
-                        { icon: Star, title: "Instagram", value: "instagram.com/kaliz_a1108", href: "https://www.instagram.com/kaliz_a1108/", color: "text-neonBlue" },
+                        { icon: InstagramIcon, title: "Instagram", value: siteConfig.instagramHandle, href: siteConfig.instagram, color: "text-neonPurple" },
                     ].map((item, i) =>
                         item.href ? (
                             <a

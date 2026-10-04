@@ -65,7 +65,7 @@ export default function ScrollRevealText() {
                 style={{ x: floatXLeft, opacity: floatOpacity }}
                 className="absolute top-1/4 left-10 text-6xl md:text-8xl font-black text-neonPurple/20 pointer-events-none uppercase"
             >
-                Invention
+                Software
             </motion.div>
             <motion.div
                 style={{ x: floatXRight, opacity: floatOpacity }}

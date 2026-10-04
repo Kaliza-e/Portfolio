@@ -31,7 +31,7 @@ function FloatingShape() {
 export default function About() {
     const containerRef = useRef(null);
 
-    const bioText = "I'm Kaliza Esther, a Full stack web developer, mobile developer and ui designer. I don't just build software; I design digital products that combine clean UI/UX, scalable systems, and real-world impact.";
+    const bioText = "I'm Kaliza Esther, a software developer and technical lead studying at Rwanda Coding Academy. Driven by curiosity and empathy, I design and build full-stack web applications, mobile platforms, backend APIs, and human-centered user experiences that solve real challenges.";
 
     return (
         <section id="about" ref={containerRef} className="about-section py-32 relative overflow-hidden">
@@ -74,7 +74,7 @@ export default function About() {
                         <div className="space-y-8 relative z-10">
                             <h3 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white leading-tight">
                                 Architecting <br />
-                                <span className="text-neonPurple">Digital</span> Experiences
+                                <span className="text-neonPurple">Empathetic</span> Solutions
                             </h3>
                             <p className="text-xl leading-relaxed font-light max-w-lg flex flex-wrap gap-x-1.5">
                                 {bioText.split(" ").map((word, i) => (
@@ -83,10 +83,10 @@ export default function About() {
                                         initial={{ opacity: 0.2 }}
                                         whileInView={{ opacity: 1 }}
                                         viewport={{ once: false, margin: "-10%" }}
-                                        transition={{ duration: 0.5, delay: i * 0.05 }}
+                                        transition={{ duration: 0.5, delay: i * 0.03 }}
                                     >
-                                        <span className="dark:hidden text-slate-400" style={{ transition: 'color 0.5s' }}>{word}</span>
-                                        <span className="hidden dark:inline text-slate-500" style={{ transition: 'color 0.5s' }}>{word}</span>
+                                        <span className="dark:hidden text-slate-700" style={{ transition: 'color 0.5s' }}>{word}</span>
+                                        <span className="hidden dark:inline text-slate-300" style={{ transition: 'color 0.5s' }}>{word}</span>
                                     </motion.span>
                                 ))}
                             </p>
@@ -116,7 +116,7 @@ export default function About() {
                     >
                         <Image
                             src="/esther.png"
-                            alt="Profile"
+                            alt="Kaliza Esther Profile"
                             fill
                             priority
                             sizes="(max-width: 768px) 100vw, 400px"
@@ -124,7 +124,7 @@ export default function About() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                         <div className="absolute bottom-8 left-8 text-white opacity-0 group-hover:opacity-100 transition-all duration-700 transform translate-y-4 group-hover:translate-y-0">
-                            <span className="text-xs font-bold tracking-widest uppercase">Creative Director</span>
+                            <span className="text-xs font-bold tracking-widest uppercase">Full-Stack Developer & Tech Lead</span>
                             <h4 className="text-2xl font-bold">Kaliza Esther</h4>
                         </div>
                     </motion.div>
@@ -138,7 +138,7 @@ export default function About() {
                         className="md:col-span-1 md:row-span-1 group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-white/[0.03] border border-black/5 dark:border-white/10 p-8 flex flex-col justify-center items-center text-center hover:bg-neonPurple/5 transition-colors duration-500"
                     >
                         <span className="text-5xl font-black text-neonPurple mb-2">{projectCountLabel(projects.length)}</span>
-                        <span className="text-xs font-bold tracking-[0.2em] uppercase text-slate-500">Projects <br /> Delivered</span>
+                        <span className="text-xs font-bold tracking-[0.2em] uppercase text-slate-500">Key Projects <br /> Delivered</span>
                     </motion.div>
 
                     {/* Skills/Focus Card */}
@@ -153,8 +153,8 @@ export default function About() {
                             <div className="w-2 h-2 rounded-full bg-white dark:bg-black" />
                         </div>
                         <div>
-                            <h4 className="text-lg font-bold leading-tight mb-2">Focusing on <br /> Scalable Systems</h4>
-                            <p className="text-xs opacity-60 font-medium">Mobile Development, Clean UI/UX & Backend APIs.</p>
+                            <h4 className="text-lg font-bold leading-tight mb-2">Focusing on <br /> Real-World Impact</h4>
+                            <p className="text-xs opacity-60 font-medium">Full-Stack Web, Mobile, Backend APIs & UI/UX Design.</p>
                         </div>
                     </motion.div>
 

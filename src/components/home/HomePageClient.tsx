@@ -9,6 +9,7 @@ import Projects from "@/components/Projects";
 import LoadingScreen from "@/components/LoadingScreen";
 import HeroOrb from "@/components/HeroOrb";
 import ScrollControls from "@/components/ScrollControls";
+import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import ScrollRevealText from "@/components/ScrollRevealText";
 import Certificates from "@/components/Certificates";
@@ -103,6 +104,7 @@ export default function HomePageClient() {
                 <About />
                 <ScrollRevealText />
                 <Skills />
+                <Experience />
                 <Projects />
                 <Certificates />
                 <Education />

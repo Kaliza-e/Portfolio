@@ -133,6 +133,9 @@ export default function AllProjectsPage() {
                         >
                             {filtered.map((project, i) => {
                                 const ProjectIcon = project.icon;
+                                const targetUrl = project.live !== "#" ? project.live : project.code !== "#" ? project.code : `/projects/${project.slug}`;
+                                const isExternal = project.live !== "#" || project.code !== "#";
+
                                 return (
                                     <motion.div
                                         key={project.slug}
@@ -140,7 +143,12 @@ export default function AllProjectsPage() {
                                         layout
                                         className="group relative"
                                     >
-                                        <Link href={`/projects/${project.slug}`} className="block">
+                                        <a
+                                            href={targetUrl}
+                                            target={isExternal ? "_blank" : undefined}
+                                            rel={isExternal ? "noopener noreferrer" : undefined}
+                                            className="block"
+                                        >
                                             <div
                                                 className="relative h-full rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
                                                 style={{
@@ -230,7 +238,7 @@ export default function AllProjectsPage() {
                                                     }}
                                                 />
                                             </div>
-                                        </Link>
+                                        </a>
                                     </motion.div>
                                 );
                             })}
