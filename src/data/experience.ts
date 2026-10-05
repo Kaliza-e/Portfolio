@@ -13,6 +13,24 @@ export interface ExperienceEntry {
 export const experienceEntries: ExperienceEntry[] = [
     {
         id: 1,
+        role: "Full-Stack Developer",
+        organization: "TOUR (Between Minds)",
+        period: "2026 — Present",
+        statusLabel: "Full-Stack Development",
+        description:
+            "Building and developing TOUR, a student-led research publishing platform designed to help people turn questions and curiosity into structured research and share their findings with a wider audience.",
+        responsibilities: [
+            "Developing and maintaining full-stack features across the platform",
+            "Building responsive user interfaces and backend services for research submission and publishing workflows",
+            "Designing and integrating APIs, database models, and application logic",
+            "Implementing researcher-facing features for submitting, managing, and refining research",
+            "Improving platform usability and creating a more accessible, human-centered research experience",
+        ],
+        skills: ["Full-Stack Dev", "React", "Next.js", "REST APIs", "Database Models", "UI/UX Design"],
+        accent: "cyan",
+    },
+    {
+        id: 2,
         role: "Technical Lead",
         organization: "RareBridge",
         period: "2026 — Present",
@@ -29,7 +47,7 @@ export const experienceEntries: ExperienceEntry[] = [
         accent: "purple",
     },
     {
-        id: 2,
+        id: 3,
         role: "Backend Engineer",
         organization: "Rwanda E-Pharmacy",
         period: "2025 — 2026",
@@ -46,7 +64,7 @@ export const experienceEntries: ExperienceEntry[] = [
         accent: "cyan",
     },
     {
-        id: 3,
+        id: 4,
         role: "Technical Lead & UI/UX Designer",
         organization: "OpportunityMap",
         period: "2025 — 2026",
