@@ -81,6 +81,8 @@ export default function HomePageClient() {
                                 <a
                                     href={siteConfig.resumePath}
                                     download={siteConfig.resumeDownloadName}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-neonPurple dark:hover:text-neonPurple transition-colors duration-200"
                                     aria-label="Download CV"
                                 >

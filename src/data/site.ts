@@ -16,7 +16,7 @@ export const siteConfig = {
     location: "Kigali, Rwanda",
     resumePath: "/certificates/KALIZA-Resume.pdf",
     resumeLabel: "Download CV",
-    resumeDownloadName: "",
+    resumeDownloadName: "KALIZA-Resume.pdf",
     instagram: "https://www.instagram.com/kaliz_a1108/",
     instagramHandle: "instagram.com/kaliz_a1108",
     socials: [
