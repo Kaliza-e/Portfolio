@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { ArrowUpRight, ArrowLeft, Calendar, Filter } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import ProjectMedia from "@/components/ProjectMedia";
 import { projects } from "@/data/projects";
 
 const allYears = Array.from(new Set(projects.map(p => p.date))).sort((a, b) => Number(b) - Number(a));
@@ -131,7 +131,7 @@ export default function AllProjectsPage() {
                             exit="hidden"
                             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
                         >
-                            {filtered.map((project, i) => {
+                            {filtered.map((project) => {
                                 const ProjectIcon = project.icon;
                                 const targetUrl = project.live !== "#" ? project.live : project.code !== "#" ? project.code : `/projects/${project.slug}`;
                                 const isExternal = project.live !== "#" || project.code !== "#";
@@ -156,16 +156,16 @@ export default function AllProjectsPage() {
                                                     boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
                                                 }}
                                             >
-                                                {/* Image Section */}
+                                                {/* Image / Video Section */}
                                                 <div className="relative h-52 overflow-hidden bg-slate-100 dark:bg-black/40">
-                                                    <Image
-                                                        src={project.image}
-                                                        alt={project.title}
-                                                        fill
-                                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                                    <ProjectMedia
+                                                        project={project}
+                                                        objectFit="cover"
+                                                        className="w-full h-full rounded-none border-0 shadow-none"
+                                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                                     />
                                                     {/* Overlay gradient */}
-                                                    <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0a0a0c] via-transparent to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-500" />
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0a0a0c] via-transparent to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none" />
 
                                                     {/* Year badge */}
                                                     <div className="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 dark:bg-black/60 backdrop-blur-md border border-black/5 dark:border-white/10">

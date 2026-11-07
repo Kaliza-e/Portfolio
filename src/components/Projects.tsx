@@ -1,26 +1,19 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight, ArrowRight, Globe } from "lucide-react";
-
-function GithubIcon({ size = 16, className = "" }: { size?: number; className?: string }) {
-    return (
-        <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-        </svg>
-    );
-}
+import { ArrowRight } from "lucide-react";
 import { LiquidButton } from "./ui/LiquidButton";
+import ProjectMedia from "./ProjectMedia";
+import { ProjectActions } from "./ProjectActions";
 import { projects } from "@/data/projects";
 
 const MAX_HOME_PROJECTS = 10;
 const homeProjects = projects.slice(0, MAX_HOME_PROJECTS);
 
 function ProjectCard({ project, index }: {
-    project: (typeof projects)[number],
-    index: number
+    project: (typeof projects)[number];
+    index: number;
 }) {
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -41,30 +34,27 @@ function ProjectCard({ project, index }: {
                 style={{ scale, opacity, y, transformOrigin: 'top center' }}
                 className="relative w-full h-full max-h-[1100px] flex flex-col lg:flex-row overflow-hidden rounded-xl md:rounded-2xl bg-white dark:bg-[#0a0a0c] border border-black/10 dark:border-white/10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] dark:shadow-[0_10px_60px_-10px_rgba(168,85,247,0.15)] will-change-transform"
             >
-                {/* Image Section (Left) — dark framed panel, full image always visible */}
+                {/* Media Section (Left) — dark framed panel, full video/image always visible */}
                 <div className="relative w-full lg:w-[58%] h-[45%] lg:h-full shrink-0 overflow-hidden group">
                     {/* Dark gradient background */}
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-[#0d0d1a] to-slate-950" />
                     {/* Colored glow overlay */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-neonPurple/10 via-transparent to-neonBlue/10 z-[1]" />
 
-                    {/* Image inside a padded, rounded frame */}
+                    {/* Media inside a padded, rounded frame */}
                     <a
                         href={targetUrl}
                         target={isExternal ? "_blank" : undefined}
                         rel={isExternal ? "noopener noreferrer" : undefined}
                         className="absolute inset-0 z-[2] flex items-center justify-center p-6 md:p-8 lg:p-10 block"
                     >
-                        <div className="relative w-full h-full rounded-xl overflow-hidden shadow-[0_20px_60px_-10px_rgba(0,0,0,0.6)] border border-white/10 group-hover:border-neonPurple/40 transition-colors duration-500">
-                            <Image
-                                src={project.image}
-                                alt={project.title}
-                                fill
-                                className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.03]"
-                                priority={index < 2}
-                                sizes="(max-width: 1024px) 100vw, 58vw"
-                            />
-                        </div>
+                        <ProjectMedia
+                            project={project}
+                            priority={index < 2}
+                            objectFit="contain"
+                            className="w-full h-full"
+                            sizes="(max-width: 1024px) 100vw, 58vw"
+                        />
                     </a>
 
                     {/* Mobile bottom fade */}
@@ -126,33 +116,7 @@ function ProjectCard({ project, index }: {
                             ))}
                         </div>
 
-                        <div className="flex flex-wrap items-center gap-3">
-                            {project.live !== "#" && (
-                                <LiquidButton
-                                    href={project.live}
-                                    color="purple"
-                                    className="w-max"
-                                    external
-                                >
-                                    <Globe size={15} />
-                                    VISIT LIVE SITE
-                                    <ArrowUpRight size={16} className="-translate-y-0.5" />
-                                </LiquidButton>
-                            )}
-
-                            {project.code !== "#" && (
-                                <LiquidButton
-                                    href={project.code}
-                                    color={project.live !== "#" ? "cyan" : "purple"}
-                                    className="w-max"
-                                    external
-                                >
-                                    <GithubIcon size={15} />
-                                    VIEW ON GITHUB
-                                    <ArrowUpRight size={16} className="-translate-y-0.5" />
-                                </LiquidButton>
-                            )}
-                        </div>
+                        <ProjectActions project={project} />
                     </motion.div>
 
                     {/* Faint Background Number */}
