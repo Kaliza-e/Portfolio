@@ -1,4 +1,4 @@
-import { Globe, Users, Droplets, Utensils, Music, BookOpen, Shield, MapPin } from "lucide-react";
+import { Globe, Users, Utensils, Music, BookOpen, Shield, MapPin } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export interface Project {
@@ -199,7 +199,6 @@ export const projects: Project[] = [
         longDesc:
             "Isonga Connect connects residents with local leaders through location-based updates and announcements about community activities, public services, health, education and emergencies. Your community. Your updates.",
         image: "/project_isonga.png",
-        video: "/videos/isonga.mp4",
         hexColor: "#22c55e",
         tech: [
             "Next.js",

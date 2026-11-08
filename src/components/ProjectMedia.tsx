@@ -41,8 +41,8 @@ export default function ProjectMedia({
     const containerRef = useRef<HTMLDivElement>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
 
-    const [shouldLoad, setShouldLoad] = useState<boolean>(priority);
     const [videoError, setVideoError] = useState<boolean>(false);
+    const [isVideoPlaying, setIsVideoPlaying] = useState<boolean>(false);
     const prefersReducedMotion = useSyncExternalStore(
         subscribeReducedMotion,
         getReducedMotionSnapshot,
@@ -54,44 +54,17 @@ export default function ProjectMedia({
 
     const hexColor = project.hexColor || "#a855f7";
     const posterSrc = project.poster || project.image;
-    const canPlayVideo = Boolean(project.video) && !videoError && !prefersReducedMotion;
+    const hasVideo = Boolean(project.video) && !videoError && !prefersReducedMotion;
 
-    // Lazy load: attach video src only when near viewport
-    useEffect(() => {
-        if (priority || shouldLoad || !project.video) return;
-
-        const element = containerRef.current;
-        if (!element) return;
-
-        if (!("IntersectionObserver" in window)) {
-            const timer = setTimeout(() => setShouldLoad(true), 0);
-            return () => clearTimeout(timer);
-        }
-
-        const lazyObserver = new IntersectionObserver(
-            (entries) => {
-                for (const entry of entries) {
-                    if (entry.isIntersecting) {
-                        setShouldLoad(true);
-                        lazyObserver.disconnect();
-                        break;
-                    }
-                }
-            },
-            { rootMargin: "300px 0px" }
-        );
-
-        lazyObserver.observe(element);
-        return () => {
-            lazyObserver.disconnect();
-        };
-    }, [priority, shouldLoad, project.video]);
-
-    // Playback on intersection: play when >= 40% in view, pause when out of view
+    // IntersectionObserver for responsive autoplay/pause
     useEffect(() => {
         const element = containerRef.current;
         const video = videoRef.current;
-        if (!element || !video || !canPlayVideo || !shouldLoad) return;
+        if (!element || !video || !hasVideo) return;
+
+        // Ensure element properties for autoplay compliance
+        video.muted = isMuted;
+        video.defaultMuted = true;
 
         if (!("IntersectionObserver" in window)) {
             video.play().catch(() => {});
@@ -101,11 +74,17 @@ export default function ProjectMedia({
         const playbackObserver = new IntersectionObserver(
             (entries) => {
                 for (const entry of entries) {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.4) {
+                    const shouldPlay =
+                        entry.isIntersecting &&
+                        (entry.intersectionRatio >= 0.4 || isDetailPage || priority);
+
+                    if (shouldPlay) {
                         if (video.paused) {
-                            video.play().catch(() => {});
+                            video.play().catch(() => {
+                                // Browser policy prevented autoplay
+                            });
                         }
-                    } else {
+                    } else if (!entry.isIntersecting || entry.intersectionRatio < 0.15) {
                         if (!video.paused) {
                             video.pause();
                         }
@@ -113,7 +92,7 @@ export default function ProjectMedia({
                 }
             },
             {
-                threshold: [0, 0.4],
+                threshold: [0, 0.2, 0.4, 0.6, 0.8, 1.0],
             }
         );
 
@@ -121,9 +100,9 @@ export default function ProjectMedia({
         return () => {
             playbackObserver.disconnect();
         };
-    }, [canPlayVideo, shouldLoad]);
+    }, [hasVideo, isMuted, isDetailPage, priority]);
 
-    // Listen to fullscreenchange on document
+    // Listen to fullscreen changes
     useEffect(() => {
         const handleFullscreenChange = () => {
             setIsFullscreen(Boolean(document.fullscreenElement));
@@ -182,7 +161,10 @@ export default function ProjectMedia({
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            {/* Fallback image / poster image always mounted underneath to eliminate flicker */}
+            {/* 
+              Foundation Layer: Poster / fallback image is ALWAYS rendered and visible.
+              Guarantees zero blank screen, zero flicker, and immediate visual display.
+            */}
             <Image
                 src={posterSrc}
                 alt={project.title}
@@ -191,22 +173,35 @@ export default function ProjectMedia({
                 sizes={sizes}
                 className={`transition-transform duration-700 group-hover:scale-[1.02] ${
                     objectFit === "cover" ? "object-cover" : "object-contain"
-                } object-center ${canPlayVideo ? "opacity-0" : "opacity-100"}`}
+                } object-center`}
             />
 
-            {/* Video element when available and motion permitted */}
-            {canPlayVideo && (
+            {/* Video element layered directly over the image, fades in once playing */}
+            {hasVideo && (
                 <video
+                    key={project.video}
                     ref={videoRef}
-                    src={shouldLoad ? project.video : undefined}
+                    src={project.video}
                     poster={posterSrc}
                     autoPlay
                     muted={isMuted}
                     loop
                     playsInline
                     preload="metadata"
-                    onError={() => setVideoError(true)}
-                    className={`absolute inset-0 w-full h-full transition-transform duration-700 group-hover:scale-[1.02] ${
+                    onPlaying={() => setIsVideoPlaying(true)}
+                    onLoadedData={() => {
+                        // Attempt to play if visible
+                        if (videoRef.current && (isDetailPage || priority)) {
+                            videoRef.current.play().catch(() => {});
+                        }
+                    }}
+                    onError={() => {
+                        setVideoError(true);
+                        setIsVideoPlaying(false);
+                    }}
+                    className={`absolute inset-0 w-full h-full transition-all duration-700 group-hover:scale-[1.02] ${
+                        isVideoPlaying ? "opacity-100" : "opacity-0"
+                    } ${
                         !isDetailPage ? "pointer-events-none" : ""
                     } ${
                         objectFit === "cover" ? "object-cover" : "object-contain"
@@ -215,7 +210,7 @@ export default function ProjectMedia({
             )}
 
             {/* Detail Page Controls: Fullscreen & Mute Toggle */}
-            {isDetailPage && canPlayVideo && (
+            {isDetailPage && hasVideo && (
                 <div className="absolute bottom-4 right-4 z-20 flex items-center gap-2 pointer-events-auto">
                     <button
                         type="button"
